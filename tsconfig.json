@@ -1,0 +1,25 @@
+{
+	"compilerOptions": {
+		"target": "ESNext",
+		"module": "ESNext",
+		"moduleResolution": "Bundler",
+		"strict": true,
+		"esModuleInterop": true,
+		"lib": ["ESNext"],
+		"verbatimModuleSyntax": true,
+		"skipLibCheck": true,
+		"outDir": "./dist",
+		"types": ["node"],
+		"jsx": "react-jsx",
+		"baseUrl": "./src",
+		"paths": {
+			"@/*": ["./*"],
+			"@prisma/*": ["./prisma/*"],
+			"@utils/*": ["./utils/*"],
+			"@types/*": ["./types/*"]
+		},
+		"allowImportingTsExtensions": true,
+		"noEmit": true
+	},
+	"exclude": ["node_modules"]
+}
