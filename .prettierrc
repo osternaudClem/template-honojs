@@ -1,8 +1,0 @@
-{
-	"useTabs": true,
-	"singleQuote": true,
-	"trailingComma": "all",
-	"importOrder": ["^[a-z]", "^[A-Z]", "^[./]"],
-	"importOrderSeparation": true,
-	"plugins": ["@trivago/prettier-plugin-sort-imports"]
-}

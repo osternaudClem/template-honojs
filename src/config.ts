@@ -7,6 +7,8 @@ type PackageJson = { version: string };
 const EnvKeys = Object.freeze({
 	NODE_ENV: 'NODE_ENV',
 	PORT: 'PORT',
+	DATABASE_URL: 'DATABASE_URL',
+	BETTER_AUTH_SECRET: 'BETTER_AUTH_SECRET',
 	GLITCHTIP_DSN: 'GLITCHTIP_DSN',
 });
 
@@ -36,6 +38,12 @@ export const config = {
 		port: Number(getEnv('PORT', { default: '3000' })),
 		nodeEnv: getEnv('NODE_ENV', { default: 'development' }),
 		version: (pkg as PackageJson).version,
+	},
+	database: {
+		url: getEnv(EnvKeys.DATABASE_URL, { required: true }),
+	},
+	auth: {
+		secret: getEnv(EnvKeys.BETTER_AUTH_SECRET, { required: true }),
 	},
 	sentry: {
 		dsn: getEnv(EnvKeys.GLITCHTIP_DSN),
