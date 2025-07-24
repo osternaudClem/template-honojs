@@ -1,0 +1,18 @@
+meta {
+  name: Create new test content
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{endpoint}}/test
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "title": "This is a test",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam cursus lectus at velit mollis, quis ultricies neque rutrum. Ut in lacinia magna. Nunc et ligula ut tortor malesuada viverra. Integer tristique, quam at blandit elementum, neque ex pretium massa, sit amet porta ligula urna et ex. Cras quam libero, iaculis eu metus id, laoreet feugiat mauris. Integer eleifend, dolor non dignissim venenatis, nisl est cursus est, nec consequat neque augue nec nibh. Praesent vitae enim ac neque rhoncus condimentum non et erat."
+  }
+}

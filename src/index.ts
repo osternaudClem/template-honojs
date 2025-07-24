@@ -7,6 +7,7 @@ import './instrument';
 import { captureException, flush } from './instrument';
 import { loggerMiddleware } from './middleware/loggerMiddleware.js';
 import { sentryRequestMiddleware } from './middleware/sentryMiddleware.js';
+import { routes } from './routes/index.js';
 import { logger } from './utils/logger.js';
 
 const app = new Hono();
@@ -17,6 +18,8 @@ app.use('*', loggerMiddleware);
 app.get('/', (c) => {
 	return c.text('Hello Hono!');
 });
+
+app.route('/', routes);
 
 app.get('/debug-sentry', () => {
 	// This will be thrown, caught by your sentryError middleware, and sent to GlitchTip

@@ -1,0 +1,17 @@
+meta {
+  name: Update test content
+  type: http
+  seq: 5
+}
+
+patch {
+  url: {{endpoint}}/test/c18c16f6-ec16-4958-ade2-ccf606753f99
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "title": "test updated"
+  }
+}
