@@ -19,8 +19,9 @@ const updateTest = (
 	return prisma.test.update({ where: { id }, data });
 };
 
-const deleteTest = (id: string) => {
-	return prisma.test.delete({ where: { id } });
+const deleteTest = async (id: string) => {
+	const result = await prisma.test.deleteMany({ where: { id } });
+	return result.count > 0;
 };
 
 export const TestService = {

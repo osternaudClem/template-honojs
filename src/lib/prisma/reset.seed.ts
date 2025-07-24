@@ -13,6 +13,8 @@ export async function resetDatabase() {
 	await prisma.session.deleteMany({});
 	await prisma.user.deleteMany({});
 
+	await prisma.test.deleteMany({});
+
 	logger.info('✅ All auth data deleted.');
 }
 

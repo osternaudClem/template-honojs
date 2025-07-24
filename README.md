@@ -1,5 +1,16 @@
 # HonoJS start template
 
+## Sommaire
+
+- [Features](#features)
+- [Quick Start](#quick-start)
+- [Testing](#testing)
+- [Environment Variables](#environment-variables)
+- [API Endpoints](#api-endpoints)
+- [Database](#database)
+- [Developer Tooling](#developer-tooling)
+- [Response Utilities](#response-utilities)
+
 A modern starter template for building APIs with [Hono](https://hono.dev/) and [Prisma](https://www.prisma.io/) on Node.js. Includes authentication, testing, and developer tooling out of the box.
 
 ## Features
@@ -12,6 +23,7 @@ A modern starter template for building APIs with [Hono](https://hono.dev/) and [
 - **Sentry integration**: Optional error monitoring via Sentry/GlitchTip
 - **Logger**: Pretty, timestamped logs
 - **ESLint & Prettier**: Code linting and formatting
+- **Vitest**: Unit and integration testing framework
 - **Seed & Reset scripts**: For database seeding and cleaning
 - **Bruno API collection**: Example API requests for testing (see `bruno/`)
 
@@ -23,6 +35,14 @@ pnpm run dev
 ```
 
 App will be available at [http://localhost:3000](http://localhost:3000)
+
+## Testing
+
+This template uses [Vitest](https://vitest.dev/) for unit and integration tests.
+
+```sh
+pnpm run test
+```
 
 ## Environment Variables
 
@@ -61,6 +81,24 @@ Set these in your `.env` file (see `.env-sample`):
 
 - ESLint and Prettier for code quality
 - Bruno collection for API testing (`bruno/` folder)
+
+## Response Utilities
+
+This template provides utility functions for consistent API responses in `src/utils/response.ts`.
+
+### Usage Example
+
+```ts
+import { ok, fail } from "@/utils/response";
+
+// In your route/controller:
+return ok(c, { foo: "bar" });
+// or
+return fail(c, "Something went wrong", 400);
+```
+
+- `ok(c, data, status?)`: Returns a standardized success response (default status 200).
+- `fail(c, message, status?, options?)`: Returns a standardized error response with custom status code and optional error details.
 
 ---
 

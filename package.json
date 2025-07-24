@@ -8,24 +8,26 @@
 		"start": "node dist/index.js",
 		"lint": "tsc --noEmit & eslint . --ext .js,.ts",
 		"format": "prettier --write .",
+		"test": "vitest run --reporter verbose",
 		"postinstall": "prisma generate",
 		"seed": "tsx src/lib/prisma/seed.ts",
 		"seed:clear": "tsx src/lib/prisma/reset.seed.ts"
 	},
 	"dependencies": {
 		"@hono/node-server": "1.17.1",
-		"@hono/zod-validator": "^0.7.2",
+		"@hono/zod-validator": "0.7.2",
 		"@prisma/client": "6.12.0",
 		"@sentry/node": "9.40.0",
 		"better-auth": "1.3.3",
 		"hono": "4.8.5",
-		"zod": "^4.0.5"
+		"zod": "4.0.5"
 	},
 	"devDependencies": {
 		"@eslint/js": "9.31.0",
 		"@sentry/hub": "7.120.3",
 		"@trivago/prettier-plugin-sort-imports": "5.2.2",
 		"@types/node": "20.11.17",
+		"@types/supertest": "6.0.3",
 		"@typescript-eslint/eslint-plugin": "8.38.0",
 		"@typescript-eslint/parser": "8.38.0",
 		"chalk": "5.4.1",
@@ -34,7 +36,9 @@
 		"globals": "16.3.0",
 		"prettier": "3.6.2",
 		"prisma": "6.12.0",
+		"supertest": "7.1.4",
 		"tsx": "4.7.1",
-		"typescript": "5.8.3"
+		"typescript": "5.8.3",
+		"vitest": "3.2.4"
 	}
 }
